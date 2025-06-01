@@ -1,4 +1,5 @@
-import defaultTheme from 'tailwindcss/defaultTheme'; // Import default theme
+// client/tailwind.config.js
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -9,17 +10,16 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        // Add your custom fonts here, extending the default sans-serif stack
-        sans: ['Inter', ...defaultTheme.fontFamily.sans], // Body font
-        heading: ['Lexend', ...defaultTheme.fontFamily.sans], // Heading font
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        heading: ['Space Grotesk', ...defaultTheme.fontFamily.sans], // Or Syne, DM Sans
       },
       colors: {
-        // Define our custom violet color for easier use
-        'violet-flask': '#8B5CF6',
-        // You can add other palette colors here too
-        'dark-bg': '#111827',
-        'light-text': '#E5E7EB',
+        'violet-flask': '#7C3AED', // More electric violet
+        'deep-indigo': '#1E1B4B',
+        'light-text': '#F8F9FA',
         'subtle-grey': '#374151',
+        'accent-teal': '#34D399',
+        'accent-pink': '#EC4899',
       }
     },
   },

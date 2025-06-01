@@ -1,11 +1,14 @@
 import React from 'react';
 
-const Navbar = () => {
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
-    <nav id="footer"> {/* Use IDs for potential scrolling later */}
-      {/* Navbar content will go here */}
-      <p>Footer Section</p>
-    </nav>
+    <footer className="bg-dark-bg text-center py-8 border-t border-subtle-grey">
+      <p className="text-sm text-light-text">
+        Designed & Built by Nour Abid © {currentYear}
+      </p>
+      {/* You can add social links here too if desired */}
+    </footer>
   );
 };
 

@@ -1,3 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tailwindcss/typography";
+@import "tailwindcss/forms";
+@import "tailwindcss/line-clamp";
+
+body {
+  background-color: #312e81; /* bg-deep-indigo */
+  color: #f7fafc; /* text-light-text */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* font-sans */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Ensures smooth scrolling behavior for the whole page */
+  scroll-behavior: smooth;
+}
+
+/* Optional: Custom scrollbar for a more polished look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #2d3748; /* Or your subtle-grey */
+}
+::-webkit-scrollbar-thumb {
+  background: #4a5568; /* A bit lighter than track */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #718096; /* Even lighter on hover */
+}
