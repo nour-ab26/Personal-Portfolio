@@ -1,29 +1,62 @@
-@import "tailwindcss";
-@import "tailwindcss/typography";
-@import "tailwindcss/forms";
-@import "tailwindcss/line-clamp";
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* "Violet Dynamism" Creative Palette */
+  --primary-violet: #7C3AED; /* Electric Violet */
+  --dark-indigo-bg: #1E1B4B;
+  --accent-teal: #34D399;
+  --accent-pink: #EC4899;
+  --light-text: #F8F9FA;
+  --subtle-grey-text: #E5E7EB;
+
+  /* Typography */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
 
 body {
-  background-color: #312e81; /* bg-deep-indigo */
-  color: #f7fafc; /* text-light-text */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* font-sans */
+  margin: 0;
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Ensures smooth scrolling behavior for the whole page */
+  background-color: var(--dark-indigo-bg);
+  color: var(--light-text);
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll often caused by animations */
+}
+
+/* Basic Reset & Scroll Behavior */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
-/* Optional: Custom scrollbar for a more polished look */
-::-webkit-scrollbar {
-  width: 8px;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.5em;
+  line-height: 1.2;
 }
-::-webkit-scrollbar-track {
-  background: #2d3748; /* Or your subtle-grey */
+
+a {
+  color: var(--accent-teal);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
-::-webkit-scrollbar-thumb {
-  background: #4a5568; /* A bit lighter than track */
-  border-radius: 4px;
+
+a:hover {
+  color: var(--primary-violet);
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #718096; /* Even lighter on hover */
+
+/* Utility class for containers (optional, but good practice) */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 0;
 }

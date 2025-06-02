@@ -1,0 +1,136 @@
+/* src/components/Hero.module.css */
+.heroSection {
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem; /* Padding for smaller screens */
+  background-color: var(--dark-indigo-bg); /* Ensure background color */
+  position: relative; /* For potential absolute positioned background elements */
+  overflow: hidden; /* If using background animations that might overflow */
+}
+
+.heroContent {
+  /* .container class from index.css will handle max-width and centering */
+  z-index: 1; /* Ensure content is above any background animations */
+}
+
+.heroSection h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem); /* Responsive font size */
+  font-weight: 700;
+  color: var(--light-text);
+  margin-bottom: 0.25em;
+  animation: fadeInDown 1s ease-out;
+}
+
+.subHeadline {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-family: var(--font-heading);
+  color: var(--primary-violet);
+  margin-bottom: 1em;
+  min-height: 1.2em; /* Prevent layout shift during typing */
+  animation: fadeInUp 1s ease-out 0.5s backwards; /* backwards fills animation before it starts */
+}
+
+.roleText {
+  /* Styling for the typed text if needed */
+}
+
+.cursor {
+  animation: blink 0.7s infinite;
+  font-weight: bold;
+}
+
+.pitch {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--subtle-grey-text);
+  max-width: 600px;
+  margin: 0 auto 2em auto;
+  animation: fadeInUp 1s ease-out 1s backwards;
+}
+
+.ctaContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  animation: fadeInUp 1s ease-out 1.5s backwards;
+}
+
+.ctaButton, .ctaButtonSecondary {
+  padding: 0.75em 1.5em;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: transform 0.2s ease-out, background-color 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.ctaButton {
+  background-color: var(--primary-violet);
+  color: var(--light-text);
+  border: 2px solid var(--primary-violet);
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  background-color: color-mix(in srgb, var(--primary-violet) 90%, black);
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--primary-violet) 40%, transparent);
+}
+
+.ctaButtonSecondary {
+  background-color: transparent;
+  color: var(--primary-violet);
+  border: 2px solid var(--primary-violet);
+}
+
+.ctaButtonSecondary:hover {
+  transform: translateY(-3px);
+  background-color: var(--primary-violet);
+  color: var(--light-text);
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--primary-violet) 40%, transparent);
+}
+
+
+/* Basic Animations */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ctaContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .ctaButton, .ctaButtonSecondary {
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+  }
+}
