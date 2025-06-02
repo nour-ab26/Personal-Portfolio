@@ -1,38 +1,75 @@
 import React from 'react';
-import styles from './About.module.css';
-import nourPhoto from '../assets/nour-photo.jpg'; // Adjust path to your photo
-import useScrollAnimation from '../hooks/useScrollAnimation'; // Import the hook
+import { motion } from 'framer-motion';
 
 const About = () => {
-  // Animation for the entire section
-  const [sectionRef, isSectionVisible] = useScrollAnimation({ threshold: 0.2 });
-  // Animation for individual elements (optional, can add stagger)
-  const [textRef, isTextVisible] = useScrollAnimation({ threshold: 0.3, delay: 200 });
-  const [imageRef, isImageVisible] = useScrollAnimation({ threshold: 0.3, delay: 400 });
-
+  // Animation variants for text blocks
+  const textVariant = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: 'easeOut' },
+    },
+  };
 
   return (
-    <section id="about" ref={sectionRef} className={`${styles.aboutSection} ${isSectionVisible ? styles.isVisible : ''}`}>
-      <div className={`${styles.aboutContainer} container`}>
-        <div ref={imageRef} className={`${styles.imageWrapper} ${isImageVisible ? styles.slideInLeft : ''}`}>
-          <img src={nourPhoto} alt="Nour Abid" className={styles.profileImage} />
-          {/* Optional: Add abstract violet shapes/lines around or behind the image */}
-          <div className={styles.decorativeShape1}></div>
-          <div className={styles.decorativeShape2}></div>
-        </div>
-        <div ref={textRef} className={`${styles.textWrapper} ${isTextVisible ? styles.slideInRight : ''}`}>
-          <h2>My Philosophy</h2>
-          <p>
-            As an engineering student deeply immersed in Advanced Technologies and specializing in Industrial Systems, I'm driven by the challenge of architecting intelligent solutions and crafting intuitive user experiences. My journey is about connecting the dots between robust software development, the potential of AI, and the strategic optimization of processes.
-          </p>
-          <p>
-            I believe in a holistic approach: understanding the core problem, designing with empathy, and building with precision. My passion lies in transforming complex requirements into elegant, effective technology that truly serves its purpose and makes a tangible difference. This includes a keen interest in how systems like ERPs can streamline operations and empower businesses.
-          </p>
-          <p>
-            Always learning, always exploring – I'm excited to contribute to projects that push boundaries and foster innovation.
-          </p>
-          {/* Optional: Interactive graphic for skills combination */}
-        </div>
+    <section
+      id="about" // ID for navbar scrolling
+      className="min-h-screen py-20 px-6 md:px-12 bg-dark-bg text-light-text flex items-center" // Use dark-bg
+    >
+      <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+        {/* Left Column: Text Content */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible" // Animate when in view
+          viewport={{ once: true, amount: 0.3 }} // Trigger once, when 30% is visible
+          variants={{
+            visible: { transition: { staggerChildren: 0.3 } } // Stagger children animations
+          }}
+        >
+          <motion.h2
+            className="text-4xl md:text-5xl font-heading font-bold text-violet-flask mb-8"
+            variants={textVariant}
+          >
+            My Philosophy
+          </motion.h2>
+          <motion.p className="text-lg md:text-xl mb-6" variants={textVariant}>
+            As a dynamic engineering student specializing in Advanced Technologies and Industrial Systems,
+            I'm driven by the power of technology to solve complex problems and enhance human experiences.
+            My journey is about weaving together diverse threads – software development, artificial intelligence,
+            user-centric design, and process optimization – to architect innovative and effective solutions.
+          </motion.p>
+          <motion.p className="text-lg md:text-xl mb-6" variants={textVariant}>
+            I believe in a holistic approach, understanding not just the 'how' of technology, but the 'why' –
+            the user needs, the business context, and the potential for real-world impact. This is particularly
+            true for my interest in ERP systems and optimizing industrial processes.
+          </motion.p>
+          <motion.p className="text-lg md:text-xl" variants={textVariant}>
+            Constantly learning and exploring, I aim to contribute to projects that are not only technically
+            challenging but also meaningful and forward-thinking.
+          </motion.p>
+        </motion.div>
+
+        {/* Right Column: Placeholder for Image/Visual Element */}
+        <motion.div
+          className="hidden md:flex justify-center items-center"
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.5 }}
+        >
+          <div className="w-80 h-80 lg:w-96 lg:h-96 bg-subtle-grey rounded-full flex items-center justify-center shadow-xl border-4 border-violet-flask">
+            <p className="text-2xl font-heading text-light-text text-center p-4">
+              {/* Replace with your image or a more creative visual later */}
+              Visual Placeholder
+            </p>
+          </div>
+          {/*
+            Later you can add:
+            <img src="/path/to/your-photo.jpg" alt="Nour Abid" className="rounded-lg shadow-xl" />
+            or a more complex SVG animation / Framer Motion graphic
+          */}
+        </motion.div>
       </div>
     </section>
   );

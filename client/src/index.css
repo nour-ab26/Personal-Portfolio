@@ -1,62 +1,27 @@
-/* src/index.css */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  /* "Violet Dynamism" Creative Palette */
-  --primary-violet: #7C3AED; /* Electric Violet */
-  --dark-indigo-bg: #1E1B4B;
-  --accent-teal: #34D399;
-  --accent-pink: #EC4899;
-  --light-text: #F8F9FA;
-  --subtle-grey-text: #E5E7EB;
-
-  /* Typography */
-  --font-heading: 'Space Grotesk', sans-serif;
-  --font-body: 'Inter', sans-serif;
+@layer utilities {
+  .bg-dark-indigo {
+    background-color: #1a1a60; /* Example hex code */
+  }
 }
 
+/* Optional: Global styles or base element styling */
 body {
-  margin: 0;
-  font-family: var(--font-body);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--dark-indigo-bg);
-  color: var(--light-text);
-  line-height: 1.6;
-  overflow-x: hidden; /* Prevent horizontal scroll often caused by animations */
+  @apply bg-dark-indigo text-light-text font-sans antialiased;
+  /* antialiased for smoother fonts */
 }
 
-/* Basic Reset & Scroll Behavior */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* Example: Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  margin-bottom: 0.5em;
-  line-height: 1.2;
-}
-
-a {
-  color: var(--accent-teal);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: var(--primary-violet);
-}
-
-/* Utility class for containers (optional, but good practice) */
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px 0;
-}
+/* Example custom component style (you can add more in @layer components) */
+/* @layer components {
+  .btn-primary {
+    @apply bg-primary-violet text-white font-bold py-2 px-4 rounded hover:bg-violet-700 transition-colors;
+  }
+} */
