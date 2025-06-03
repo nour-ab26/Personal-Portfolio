@@ -2,26 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .bg-dark-indigo {
-    background-color: #1a1a60; /* Example hex code */
-  }
-}
-
-/* Optional: Global styles or base element styling */
 body {
-  @apply bg-dark-indigo text-light-text font-sans antialiased;
-  /* antialiased for smoother fonts */
+  @apply bg-dark-bg text-light-text-body font-sans; /* Default body text */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Example: Smooth scrolling for anchor links */
-html {
-  scroll-behavior: smooth;
+h1, h2, h3, h4, h5, h6 {
+  @apply text-light-text-heading font-heading; /* Default heading text */
 }
 
-/* Example custom component style (you can add more in @layer components) */
-/* @layer components {
-  .btn-primary {
-    @apply bg-primary-violet text-white font-bold py-2 px-4 rounded hover:bg-violet-700 transition-colors;
+/* Unified Card Base Style - Apply this class to all card-like divs */
+.unified-card {
+  @apply bg-section-bg-alt rounded-lg shadow-lg border border-border-lines 
+         transition-all duration-300 ease-out;
+}
+.unified-card:hover {
+  @apply transform -translate-y-1 shadow-violet-glow border-violet-flask/70;
+}
+
+/* Futuristic Glow Border (More refined for this cohesive theme) */
+.futuristic-glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -1.5px; /* Thinner border */
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--angle, 0deg),
+    transparent 0%,
+    theme('colors.violet-flask / 0.3') 25%, /* More focused glow segment */
+    transparent 50%,
+    theme('colors.violet-flask / 0.3') 75%,
+    transparent 100%
+  );
+  animation: spin 7s linear infinite;
+  z-index: -1;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease-out;
+}
+.futuristic-glow-border:hover::before {
+  opacity: 1; /* Show on hover */
+}
+
+@property --angle { /* For CSS Houdini if supported */
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+@keyframes spin { to { --angle: 360deg; transform: rotate(360deg); } }
+
+/* Other global styles or animation keyframes */
+@layer utilities {
+  @keyframes gradientFlow { /* For subtle background gradient shifts if used */
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
-} */
+  .animate-gradient-flow {
+    background-size: 200% 200%; /* Needs a gradient background applied */
+    animation: gradientFlow 15s ease infinite;
+  }
+}

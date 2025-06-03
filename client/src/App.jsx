@@ -13,7 +13,7 @@ function App() {
   return (
     // Ensure you're using the custom font classes from tailwind.config.js
     // and the dark theme background/text colors
-    <div className="App bg-dark-bg text-light-text min-h-screen font-sans selection:bg-violet-flask selection:text-white">
+    <div className="App min-h-screen font-sans selection:bg-violet-flask selection:text-white">
       <Navbar />
       <main>
         {/* Add IDs to these main section components directly */}

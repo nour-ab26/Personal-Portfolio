@@ -1,6 +1,31 @@
 
 export const playgroundItems = [
   {
+    id: 'ieee-cis-chairwoman',
+    title: 'Chairwoman - IEEE CIS ENSTAB SBC',
+    description: 'Led the IEEE Computational Intelligence Society Student Branch Chapter, fostering a community for AI enthusiasts. Organized technical workshops, speaker sessions, and collaborative projects, enhancing student engagement and knowledge in AI.',
+    // image: ieeeChairwomanVisual,
+    imagePlaceholder: 'IEEE CIS Leadership Visual',
+    tags: ['Leadership', 'Community Building', 'Event Management', 'AI Advocacy', 'Communication'],
+    link: null, // Link to IEEE chapter page or a relevant post
+  },
+  {
+    id: 'competitive-programming',
+    title: 'Competitive Programming Achievements',
+    description: 'Actively participated in numerous national and regional coding competitions, consistently achieving strong rankings. Honed skills in algorithmic thinking, problem-solving under pressure, and efficient coding practices.',
+    // image: competitiveProgrammingVisual,
+    imagePlaceholder: 'Coding Competitions Montage',
+    tags: ['Algorithms', 'Problem Solving', 'C++', 'Time Management', 'Teamwork (for team contests)'],
+    // Optionally, list a few top ranks here or link to a profile on a CP platform
+    details: [ // Could be a list for the modal later if you make a modal for these
+        'LEAGUE of Coders 3.0 (Rank 21/48)',
+        'CodeQuest (Rank 14/87)',
+        'Ept Solving Cup 4.0 (Rank 23/64)',
+        'ACPC Girls (Rank 76/300)',
+    ],
+    link: null,
+  },
+  {
     id: 'coding-verse',
     title: 'The Coding Verse - Brand Identity',
     description: 'Designed and developed the visual identity for ACM Enstab’s creative tech brand, establishing a unique and recognizable style.',
