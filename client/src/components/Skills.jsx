@@ -15,22 +15,22 @@ const skillsData = [
   {
     category: "AI & Data Science",
     icon: <AiOutlineRobot size={28} className="text-accent-pink" />,
-    items: ["Machine Learning", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "NLP Concepts", "Deep Learning Concepts", "TensorFlow", "PyTorch", "Jupyter"],
+    items: ["Machine Learning", "Scikit-learn", "Pandas", "NumPy", "Matplotlib","Classification", "NLP Concepts", "Deep Learning Concepts", "TensorFlow", "PyTorch", "Jupyter"],
   },
   {
     category: "Design & UX",
     icon: <FaFigma size={28} className="text-violet-flask" />,
-    items: ["Figma", "UX/UI Design", "Prototyping", "Photoshop", "Illustrator", "Canva", "Visual Storytelling"],
+    items: ["Figma", "UX/UI Design", "Prototyping", "Adobe Photoshop", "Adobe Illustrator", "Canva"],
   },
   {
-    category: "Process & Systems",
+    category: "Industrial Concepts",
     icon: <VscServerProcess size={28} className="text-accent-teal" />,
-    items: ["ERP Concepts", "Operations Mgt.", "Process Analysis", "ISO 9001", "Project Mgt. (Foundational)", "Agile"],
+    items: ["Operations Management","Operations Research", "Process Analysis (JSSP)", "ERP Concepts", "Quality Management (ISO 9001)", "Lean", "SCM", "Six Sigma"],
   },
   {
     category: "Tools & Databases",
     icon: <FaGitAlt size={28} className="text-accent-pink" />,
-    items: ["Git & GitHub", "VS Code", "SQLite", "MongoDB", "REST APIs", "Docker (Familiarity)"],
+    items: ["Git & GitHub", "VS Code", "SQLite", "PostgreSQL", "REST APIs", "SCRUM Methodology"],
   },
 ];
 

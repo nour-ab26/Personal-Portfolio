@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-// You could use react-icons for a more abstract "brain" or "network" icon
-// import { GiAbstract020, GiArtificialIntelligence } from 'react-icons/gi';
+import profilePhoto from '../assets/images/portrait.png';
 
 const About = () => {
   const sectionVariant = {
@@ -98,42 +97,40 @@ const About = () => {
 
         {/* Visual Element (Takes 2 columns on md+) */}
         <motion.div
-          className="md:col-span-2 flex justify-center items-center h-full"
-          variants={visualVariant}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          {/* Futuristic Orb / Network Graphic - Placeholder */}
-          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
-            <motion.div
-              className="absolute inset-0 rounded-full border-2 border-violet-flask/50"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-            />
-            <motion.div
-              className="absolute inset-2 rounded-full border-2 border-accent-teal/50"
-              animate={{ rotate: -360 }}
-              transition={{ duration: 25, repeat: Infinity, ease: 'linear', delay: 0.5 }}
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <motion.div
-                className="w-2/3 h-2/3 bg-gradient-to-br from-violet-flask/30 via-deep-indigo/50 to-accent-pink/30 rounded-full shadow-2xl backdrop-blur-sm flex items-center justify-center"
-                whileHover={{ scale: 1.1, boxShadow: "0 0 25px #8B5CF6" }}
-                transition={{ type: 'spring', stiffness: 200 }}
-              >
-                <div className="w-64 h-64 rounded-full overflow-hidden">
-                     <img
-                        src="src/assets/nour-photo.jpg"
-                        alt="Nour's Photo"
-                        loading="lazy"
-                        className="w-full h-full object-cover object-center scale-125"
-                        />
-                      </div>
-              </motion.div>
-            </div>
-          </div>
-        </motion.div>
+  className="md:col-span-2 flex justify-center items-center h-full"
+  variants={visualVariant}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+>
+  {/* Larger Circular Frame */}
+  <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px]"> {/* Increased size */}
+    {/* Animated border/frame */}
+    <motion.div
+      className="absolute inset-0 rounded-full border-2 border-violet-flask/30 futuristic-glow-border"
+      animate={{ rotate: 360 }}
+      transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
+    />
+
+    {/* The Image Container with a background color */}
+    <div className="absolute inset-2 overflow-hidden rounded-full bg-deep-indigo"> {/* Added bg color */}
+        <motion.img
+            src={profilePhoto}
+            alt="Nour Abid"
+            className="w-full h-full object-contain" // <<< CHANGED to object-contain
+            initial={{ scale: 1.2, filter: "grayscale(70%)" }}
+            whileInView={{ scale: 1.2, filter: "grayscale(0%)" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
+            viewport={{ once: true }}
+        />
+    </div>
+
+    {/* Optional: Add a subtle overlay or corner elements on the circular frame */}
+    {/* These might need adjustment or removal depending on the new size and your preference */}
+    <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-accent-teal/70 rounded-tl-full"></div>
+    <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-accent-teal/70 rounded-br-full"></div>
+  </div>
+</motion.div>
       </div>
     </section>
   );

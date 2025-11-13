@@ -14,7 +14,7 @@ const Playground = () => {
 
   return (
     <section
-    id="playground"
+    id="Volunteering"
     className="py-24 px-6 md:px-12 text-light-text relative overflow-hidden min-h-screen
                section-bg-alt" // Use the alternative dark background (e.g., deep-indigo)
   >
@@ -28,7 +28,7 @@ const Playground = () => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.7 }}
         >
-          Creative Sandbox & Leadership
+          Leadership & Volunteering
         </motion.h2>
 
         {playgroundItems.length > 0 ? (

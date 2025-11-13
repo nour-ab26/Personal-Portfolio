@@ -26,8 +26,8 @@ const Footer = () => {
       <div className="container mx-auto text-center">
         <div className="flex justify-center space-x-8 mb-6">
           {[
-            { href: "YOUR_LINKEDIN_URL", icon: FaLinkedin, label: "LinkedIn" },
-            { href: "YOUR_GITHUB_URL", icon: FaGithub, label: "GitHub" },
+            { href: "https://www.linkedin.com/in/nour-abid011", icon: FaLinkedin, label: "LinkedIn" },
+            { href: "https://github.com/nour-ab26", icon: FaGithub, label: "GitHub" },
             { href: "mailto:noure.abid@enstab.ucar.tn", icon: FaEnvelope, label: "Email" },
           ].map(link => (
             <motion.a

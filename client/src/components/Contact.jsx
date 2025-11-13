@@ -86,8 +86,8 @@ const Contact = () => {
             <div className="space-y-4">
               {[
                 { href: "mailto:noure.abid@enstab.ucar.tn", icon: FaEnvelope, text: "noure.abid@enstab.ucar.tn" },
-                { href: "YOUR_LINKEDIN_URL", icon: FaLinkedin, text: "LinkedIn Profile" },
-                { href: "YOUR_GITHUB_URL", icon: FaGithub, text: "GitHub Portfolio" },
+                { href: "https://www.linkedin.com/in/nour-abid011", icon: FaLinkedin, text: "LinkedIn Profile" },
+                { href: "https://github.com/nour-ab26", icon: FaGithub, text: "GitHub Portfolio" },
               ].map(link => (
                 <motion.a
                   key={link.text}

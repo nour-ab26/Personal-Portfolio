@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaPaintBrush, FaTimes } from 'react-icons/fa'; // Added FaTimes
+import { FaGithub, FaExternalLinkAlt, FaPaintBrush, FaTimes } from 'react-icons/fa';
 
 const ProjectModal = ({ project, onClose }) => {
   if (!project) return null;
@@ -27,11 +27,11 @@ const ProjectModal = ({ project, onClose }) => {
     },
   };
 
-  return (
-    <AnimatePresence mode="wait"> {/* mode="wait" ensures exit animation completes first */}
-      {project && ( // Ensure project exists before rendering
+ return (
+    <AnimatePresence mode="wait">
+      {project && (
         <motion.div
-          key="backdrop" // Key for AnimatePresence
+          key="backdrop"
           className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[60] flex justify-center items-center p-4"
           variants={backdropVariants}
           initial="hidden"
@@ -40,12 +40,9 @@ const ProjectModal = ({ project, onClose }) => {
           onClick={onClose}
         >
           <motion.div
-            key="modal" // Key for AnimatePresence
-            className="bg-deep-indigo/80 backdrop-blur-lg text-light-text p-6 md:p-8 rounded-2xl shadow-2xl 
-                       w-full max-w-3xl max-h-[90vh] overflow-y-auto relative 
-                       border-2 border-violet-flask/50" // Glassmorphism for modal
+            key="modal"
+            className="bg-deep-indigo/80 backdrop-blur-lg text-light-text p-6 md:p-8 rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto relative border-2 border-violet-flask/50"
             variants={modalVariants}
-            // layoutId={`card-container-${project.id}`} // Keep for shared layout animation experiments
             onClick={(e) => e.stopPropagation()}
           >
             <motion.button
@@ -67,8 +64,20 @@ const ProjectModal = ({ project, onClose }) => {
               {project.title}
             </motion.h2>
 
-            <div className="w-full aspect-video bg-dark-bg rounded-lg mb-6 overflow-hidden"> {/* aspect-video for responsive image */}
-              {project.image ? (
+             <div className="w-full aspect-video bg-dark-bg rounded-lg mb-6 overflow-hidden">
+              {project.videoUrl ? (
+                <video
+                  src={project.videoUrl}
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline // Important for mobile browsers
+                  controls // Good practice to add controls
+                >
+                  Your browser does not support the video tag.
+                </video>
+              ) : project.image ? (
                 <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
               ) : (
                 <div className="w-full h-full flex items-center justify-center">

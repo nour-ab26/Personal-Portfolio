@@ -1,13 +1,22 @@
+import optiflowImg from '../assets/projects/optiflow.png';
+import financeAppImg from '../assets/projects/dinero.png';
+import notesAppImg from '../assets/projects/note.png';
+import optiflowVideo from '../assets/video/optiflow-demo.mp4'; 
+import dineroVideo from '../assets/video/dinero.webm'; 
+import noteVideo from '../assets/video/note.mp4'; 
+import nlpSafetyImg from '../assets/projects/nlp-safety-report.png';
+
 
 export const projects = [
   {
     id: 'optiflow',
     title: 'OptiFlow - Production Scheduling',
-    shortDescription: 'Desktop app to simplify and optimize manufacturing order scheduling (JSSP).',
-    // image: optiflowImg, // Uncomment and use actual image path
-    imagePlaceholder: 'OptiFlow App Screenshot/Mockup', // Placeholder
+    shortDescription: 'Web app to simplify and optimize manufacturing order scheduling (JSSP).',
+    image: optiflowImg,
+    // Add a video URL (can be a local video in public folder or a YouTube/Vimeo link)
+    videoUrl: optiflowVideo,
     tags: ['Python', 'Flask', 'PyQt5', 'SQLite', 'Figma', 'Process Optimization'],
-    category: ['Web Dev', 'UX/UI', 'Process Optimization'], // For filtering
+    category: ['Web Dev', 'UX/UI', 'Process Optimization'],
     details: {
       challenge: 'Small manufacturing businesses often struggle with complex and inefficient production scheduling. The goal was to create an accessible tool to manage and optimize job shop scheduling problems (JSSP).',
       solution: 'I designed and developed a desktop application featuring a user-friendly interface (designed in Figma) and a Python/Flask backend. The system allows users to input jobs, resources, and constraints, then utilizes a scheduling algorithm to propose optimized production plans. It simplifies data entry and visualizes the schedule.',
@@ -20,16 +29,15 @@ export const projects = [
       ],
       learnings: 'Gained deep insights into industrial process optimization, backend development with Flask, and creating intuitive desktop UIs with PyQt5. Reinforced skills in translating complex requirements into a functional software solution.',
     },
-    githubLink: 'https://github.com/yourusername/optiflow', // Replace with actual link
-    liveDemoLink: null, // or actual link if available
-    figmaLink: 'https://figma.com/your-optiflow-prototype', // Replace
+    githubLink: 'https://github.com/nour-ab26/Optiflow_web_app',
+    liveDemoLink: null,
   },
   {
     id: 'finance-app',
     title: 'Personal Finance Web App',
     shortDescription: 'Full-stack web application for tracking personal income, expenses, and budgets.',
-    // image: financeAppImg,
-    imagePlaceholder: 'Finance App Dashboard',
+    image: financeAppImg,
+    videoUrl: dineroVideo, // No video for this one, so it will fall back to the image
     tags: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Figma', 'JavaScript'],
     category: ['Web Dev', 'UX/UI'],
     details: {
@@ -46,14 +54,13 @@ export const projects = [
     },
     githubLink: 'https://github.com/yourusername/finance-app',
     liveDemoLink: null,
-    figmaLink: 'https://figma.com/your-finance-prototype',
   },
-  {
+    {
     id: 'notes-app',
     title: 'Desktop Notes Application',
     shortDescription: 'A desktop app for creating, managing, and organizing notes with user authentication.',
-    // image: notesAppImg,
-    imagePlaceholder: 'Notes App Interface',
+    image: notesAppImg,
+    videoUrl: noteVideo,
     tags: ['Python', 'Flask', 'PyQt5', 'SQLite', 'Figma', 'Flask-Login'],
     category: ['Web Dev', 'UX/UI'],
     details: {
@@ -68,9 +75,30 @@ export const projects = [
       ],
       learnings: 'Strengthened backend skills with Flask, gained experience in building desktop applications with PyQt5, and managing user authentication flows.',
     },
-    githubLink: 'https://github.com/yourusername/notes-app',
+    githubLink: 'https://github.com/nour-ab26/Notes-Desktop-App',
     liveDemoLink: null,
-    figmaLink: null,
+  },
+
+  {
+    id: 'nlp-safety-report',
+    title: 'Industrial Safety Report Analysis (NLP)',
+    shortDescription: 'An NLP pipeline to analyze industrial safety reports, classify severity, and extract key entities for proactive risk analysis.',
+    image: nlpSafetyImg,
+    videoUrl: null, // Add a video URL if you have one
+    tags: ['Python', 'PyTorch', 'Hugging Face', 'Scikit-learn', 'Pandas', 'NLP'],
+    category: ['AI/ML', 'NLP'],
+    details: {
+      challenge: 'Industrial safety reports are often unstructured text, making it difficult to identify trends and critical risks proactively. The goal was to automate this analysis.',
+      solution: 'I developed an NLP pipeline using Python and modern deep learning libraries. The system ingests safety reports, uses models (potentially from Hugging Face/PyTorch) to classify the severity of incidents, and performs Named Entity Recognition (NER) to extract key failure-related entities (e.g., equipment type, failure mode).',
+      myRole: [
+        'End-to-end development of the NLP pipeline.',
+        'Data preprocessing and cleaning of text reports.',
+        'Fine-tuning or implementing models from Hugging Face/PyTorch for classification and NER.',
+        'Using Scikit-learn and Pandas for initial analysis and metrics.',
+      ],
+      learnings: 'Gained hands-on experience with advanced NLP techniques, including text classification and entity extraction using PyTorch and the Hugging Face ecosystem. Deepened my understanding of applying AI to real-world industrial problems.',
+    },
+    githubLink: 'https://github.com/yourusername/nlp-safety-analysis', // Replace
   },
   // Add more projects as needed
 ];

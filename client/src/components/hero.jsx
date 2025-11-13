@@ -1,10 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
-// import { FaChevronDown } from 'react-icons/fa'; // Alternative to SVG path
 
 const Hero = () => {
-  // ... (scrollToProjects and scrollToContact functions remain the same) ...
+
   const scrollToProjects = (e) => {
     e.preventDefault();
     const section = document.querySelector('#projects');
@@ -54,11 +53,10 @@ const Hero = () => {
       >
           <TypeAnimation
             sequence={[
-              'Software Developer', 2000,
-              'AI Enthusiast', 2000,
-              'UX/UI Designer', 2000,
-              'Industrial Systems Thinker', 2000,
-              'Creative Problem-Solver', 2000,
+              'Machine Learning Engineer', 2000,
+              'Data Scientist', 2000,
+              'Full-Stack Developer', 2000,
+              'NLP Enthusiast', 2000,
             ]}
             wrapper="span"
             speed={40}
