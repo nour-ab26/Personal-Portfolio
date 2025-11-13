@@ -80,18 +80,16 @@ const About = () => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.7 }}
         >
-            Deconstructing Complexity,
-            <br />
-            Architecting Innovation.
+            About Me
           </motion.h2>
           <motion.p className="text-lg md:text-xl mb-6 text-light-text/90" variants={textBlockVariant}>
-            As a dynamic engineering student (Advanced Tech, Industrial Systems), I'm driven by technology's power to solve complex problems and elevate user experiences. My journey is about weaving {highlightSpan('diverse threads')} – software development, AI, user-centric design, and process optimization – into impactful solutions.
+            I am currently an {highlightSpan ('Advanced Technologies Engineering student')} at {highlightSpan('ENSTAB')}, specializing in the {highlightSpan('Industrial Systems and Competitiveness')} option. This unique academic path fuels my core passions: applying intelligent technology to solve real-world industrial challenges.
           </motion.p>
           <motion.p className="text-lg md:text-xl mb-6 text-light-text/90" variants={textBlockVariant}>
-            I believe in a holistic approach, understanding not just the 'how' but the 'why'. This perspective is key to my interest in {highlightSpan('ERP systems')} and optimizing industrial processes for tangible real-world impact.
+            I am deeply passionate about {highlightSpan('Machine Learning')}, particularly in contexts like predictive maintenance and data-driven optimization. My coursework in {highlightSpan('Operations Management, ERP Concepts, and Process Analysis')} provides me with a strong framework for understanding and improving the complex systems where these AI models can create the most value.
           </motion.p>
           <motion.p className="text-lg md:text-xl text-light-text/90" variants={textBlockVariant}>
-            Constantly learning and exploring, I aim to contribute to projects that are both technically challenging and {highlightSpan('meaningfully forward-thinking')}.
+            My goal is to bridge the gap between advanced algorithms and practical industrial applications. I thrive on deconstructing complex processes and building efficient, data-informed solutions, whether through software development, AI modeling, or user-centric design.
           </motion.p>
         </motion.div>
 

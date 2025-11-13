@@ -20,6 +20,14 @@ const Hero = () => {
     }
   };
 
+  const scrollToSection = (e) => {
+    e.preventDefault();
+    const section = document.querySelector('#about');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
 
   return (
     <section
@@ -73,7 +81,7 @@ const Hero = () => {
 
         <motion.div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
           <motion.button // Primary CTA
-          // ...
+          onClick={scrollToProjects}
            className="text-lg font-semibold py-3 px-8 rounded-md text-white
                     bg-gradient-to-r from-violet-flask via-accent-pink to-accent-teal 
                     shadow-lg hover:brightness-110 transition duration-300" >
@@ -81,7 +89,7 @@ const Hero = () => {
           </motion.button>
           
           <motion.button // Secondary CTA
-          // ...
+          onClick={scrollToContact}
           className="text-lg font-semibold py-3 px-8 rounded-md
              bg-transparent text-transparent bg-clip-text
              border-2 border-transparent
